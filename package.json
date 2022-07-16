@@ -4,11 +4,20 @@
   "description": "Project with typescript format",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon src/server.ts",
+    "build": "tsc --build"
   },
   "author": "ALGOMARINE SOLUTION",
   "license": "MIT",
   "devDependencies": {
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "nodemon": "^2.0.19",
+    "ts-node": "^10.9.1",
     "typescript": "^4.4.2"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.1"
   }
 }
