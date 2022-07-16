@@ -1,0 +1,14 @@
+{
+  "name": "ts-template",
+  "version": "1.0.0",
+  "description": "Project with typescript format",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ALGOMARINE SOLUTION",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.4.2"
+  }
+}
