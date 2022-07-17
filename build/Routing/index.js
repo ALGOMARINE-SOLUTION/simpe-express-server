@@ -5,9 +5,9 @@ const express_1 = require("express");
 const Data_1 = require("../Data");
 // Materials :
 // 1. Exercise
-// 2. Joi (Validate Input)
-// 3. Move logic to function
-// 4. Move function to class (for better organization or a.k.a import)
+// 2. Joi (Validate Input for naught user)
+// 3. Move logic to function (for cleaner Route file)
+// 4. Move function to class (for better organization (tagging bangun-datar/perpustakaan) in Route file)
 // =================================================================================================
 //                                     ROUTING CONFIGURATION
 // =================================================================================================
@@ -18,25 +18,34 @@ route.get('/bangun-datar', (req, res) => {
     res.send(`
       <p>Halo, bagian ini adalah segala hal berkaitan dengan perhitungan bangun datar<br>Berikut beberapa API yang tersedia : </p>
       <ul>
-        <li>POST : <code>/bangun-datar/segitiga</code> &rarr; API ini digunakan untuk menghitung dengan luas dan keliling segitiga sama sisi dengan input <i>alas</i> dan <i>tinggi</i></li>
         <li>POST : <code>/bangun-datar/persegi</code> &rarr; API ini digunakan untuk menghitung dengan luas dan keliling persegi dengan input <i>sisi</i></li>
+        <li>POST : <code>/bangun-datar/lingkaran</code> &rarr; API ini digunakan untuk menghitung dengan luas dan keliling lingkaran dengan input <i>radius</i></li>
+        <li>POST : <code>/bangun-datar/segitiga</code> &rarr; API ini digunakan untuk menghitung dengan luas dan keliling segitiga sama sisi dengan input <i>alas</i> dan <i>tinggi</i></li>
         <li>POST : <code>/bangun-datar/persegi-panjang</code> &rarr; API ini digunakan untuk menghitung dengan luas dan keliling persegi panjang dengan input <i>panjang</i> dan <i>lebar</i></li>
       </ul>
     `);
-});
-route.post('/bangun-datar/segitiga', (req, res) => {
-    let luas = 0;
-    let keliling = 0;
-    // LOGIKA LUAS DAN KELILING SEGITIGA
-    // TODO : Membuat logika untuk menghitung luas dan keliling segitiga
-    // Kirim Luas dan Keliling ke User
-    return res.json({ data: { luas: luas, keliling: keliling } });
 });
 route.post('/bangun-datar/persegi', (req, res) => {
     let luas = 0;
     let keliling = 0;
     // LOGIKA LUAS DAN KELILING PERSEGI
     // TODO : Membuat logika untuk menghitung luas dan keliling persegi
+    // Kirim Luas dan Keliling ke User
+    return res.json({ data: { luas: luas, keliling: keliling } });
+});
+route.post('/bangun-datar/lingkaran', (req, res) => {
+    let luas = 0;
+    let keliling = 0;
+    // LOGIKA LUAS DAN KELILING LINGKARAN
+    // TODO : Membuat logika untuk menghitung luas dan keliling lingkaran
+    // Kirim Luas dan Keliling ke User
+    return res.json({ data: { luas: luas, keliling: keliling } });
+});
+route.post('/bangun-datar/segitiga', (req, res) => {
+    let luas = 0;
+    let keliling = 0;
+    // LOGIKA LUAS DAN KELILING SEGITIGA
+    // TODO : Membuat logika untuk menghitung luas dan keliling segitiga
     // Kirim Luas dan Keliling ke User
     return res.json({ data: { luas: luas, keliling: keliling } });
 });
