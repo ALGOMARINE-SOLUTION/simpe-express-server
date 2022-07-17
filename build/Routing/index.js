@@ -7,7 +7,7 @@ const express_1 = require("express");
 // CREATE THE ROUTER
 const route = (0, express_1.Router)();
 // ALL ROUTES
-// TODO : Create routes
+// TODO : Create route
 route.get('/', (req, res) => res.sendStatus(200));
 // =================================================================================================
 //                                            OTHERS

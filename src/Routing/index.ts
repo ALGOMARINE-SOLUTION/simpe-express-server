@@ -8,7 +8,7 @@ import { Router } from "express";
 const route = Router();
 
 // ALL ROUTES
-// TODO : Create routes
+// TODO : Create route
 route.get('/', (req, res) => res.sendStatus(200))
 
 // =================================================================================================
