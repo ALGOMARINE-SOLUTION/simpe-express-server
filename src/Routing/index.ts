@@ -4,6 +4,9 @@ import { Router } from "express";
 //                                     ROUTING CONFIGURATION
 // =================================================================================================
 
+// KOLEKSI BUKU
+const koleksiBuku = []
+
 // CREATE THE ROUTER
 const route = Router();
 
@@ -68,6 +71,9 @@ route.get('/book-abstract', function (req, res) {
     res.json ({ data : summary })
 })
 
+route.delete('/delete-book', function(req, res) {
+    const urutan = 
+})
 // =================================================================================================
 //                                            OTHERS
 // =================================================================================================
