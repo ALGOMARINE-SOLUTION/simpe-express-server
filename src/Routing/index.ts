@@ -9,10 +9,15 @@ const route = Router();
 
 // ALL ROUTES
 // TODO : Create routes
-// route.get('/warna-warna', function (req, res) {
-//     const warna = ['kuning', 'hijau'];
-//     res.json ({ "data": warna }) ;
-// })
+route.get('/warna-warna', function (req, res) {
+    const warna = ['kuning', 'hijau'];
+    res.json ({ "data": warna }) ;
+})
+
+route.post('/kirim-data', function(req, res) {
+    const data = req.body;
+    res.json({ data: data })
+})
 
 // ELSA
 // TODO : API ELSA -> Mengambil list buku perpustakaan
@@ -60,7 +65,7 @@ method: GET
 */
 route.get('/book-abstract', function (req, res) {
     const summary = "Buku ini menjelaskan tentang dunia dengan 5 fraksin dan ..."
-    res.json ({ "data": summary })
+    res.json ({ data : summary })
 })
 
 // =================================================================================================
