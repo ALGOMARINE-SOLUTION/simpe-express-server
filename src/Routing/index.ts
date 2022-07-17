@@ -4,6 +4,9 @@ import { Router } from "express";
 //                                     ROUTING CONFIGURATION
 // =================================================================================================
 
+// KOLEKSI BUKU
+const koleksiBuku = []
+
 // CREATE THE ROUTER
 const route = Router();
 
