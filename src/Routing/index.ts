@@ -9,6 +9,7 @@ const route = Router();
 
 // ALL ROUTES
 // TODO : Create routes
+route.get('/', (req, res) => res.sendStatus(200))
 
 // =================================================================================================
 //                                            OTHERS
