@@ -5,9 +5,9 @@ import { koleksiBuku } from "../Data";
 
 // Materials :
 // 1. Exercise
-// 2. Joi (Validate Input)
-// 3. Move logic to function
-// 4. Move function to class (for better organization or a.k.a import)
+// 2. Joi (Validate Input for naught user)
+// 3. Move logic to function (for cleaner Route file)
+// 4. Move function to class (for better organization (tagging bangun-datar/perpustakaan) in Route file)
 
 // =================================================================================================
 //                                     ROUTING CONFIGURATION
