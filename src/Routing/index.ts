@@ -56,6 +56,60 @@ method: GET
 }
 */
 
+// ELSA
+// TODO : API ELSA -> Menambahkan data buku
+/*
+path: '/add-book'
+method: GET
+Body:
+{
+  nama: 'divergent',
+  pengarang : 'Veronica Roth',
+  tahun: 2011,
+  kota: 'New York',
+  penerbit: 'Mizan Fantasy'
+}
+Response:
+{
+  status: 'success'
+}
+*/
+
+// MOSES
+// TODO : API MOSES -> Mengupdate data buku
+/*
+path: '/add-book'
+method: GET
+Body:
+{
+  urutan: 2,
+  nama: 'divergent',
+  pengarang : 'Veronica Roth',
+  tahun: 2011,
+  kota: 'New York',
+  penerbit: 'Mizan Fantasy'
+}
+Response:
+{
+  status: 'success'
+}
+*/
+
+// Salmaa
+// TODO : API Salmaa -> Menghapuse data buku
+/*
+path: '/add-book'
+method: GET
+Body:
+{
+  urutan: 2,
+}
+Response:
+{
+  status: 'success'
+}
+*/
+
 
 // =================================================================================================
 //                                            OTHERS
