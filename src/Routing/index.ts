@@ -138,6 +138,12 @@ route.get('/perpustakaan/daftar-buku', (req, res) => {
 
 // API hapus buku
 // TODO : Bikin API Hapus Buku
+route.post('/perpustakaan/hapus-buku', (req, res) => {
+    const input = req.body;
+    const urutan = input.urutan;
+    koleksiBuku.splice(urutan, 1);
+    return res.json({ data: koleksiBuku })
+})
 
 // =================================================================================================
 //                                            OTHERS
