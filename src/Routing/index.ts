@@ -35,6 +35,7 @@ route.post('/bangun-datar/persegi', (req, res) => {
   let luas = 0
   let keliling = 0
   // LOGIKA LUAS DAN KELILING PERSEGI
+  // TODO : Membuat logika untuk menghitung luas dan keliling persegi
 
   // Kirim Luas dan Keliling ke User
   return res.json({ data: { luas: luas, keliling: keliling } })
