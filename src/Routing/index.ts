@@ -132,7 +132,15 @@ route.get('/perpustakaan/daftar-buku', (req, res) => {
 
 // API tambah buku
 // TODO : Bikin API Tambah Buku
+route.post('/perpustakaan/tambah-buku', (req, res) => {
+const nambah = req.body;
+const nama = nambah.nama
+const pengarang = nambah.pengarang
 
+koleksiBuku.push(nambah)  
+
+  return res.json({data : koleksiBuku})
+})
 // API ubah buku
 // TODO : Bikin API Ubah Buku
 
