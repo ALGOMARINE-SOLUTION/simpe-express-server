@@ -5,9 +5,9 @@ import { koleksiBuku } from "../Data";
 
 // Materials :
 // 1. Exercise
-// 2. Joi (Validate Input for naught user)
-// 3. Move logic to function (for cleaner Route file)
-// 4. Move function to class (for better organization (tagging bangun-datar/perpustakaan) in Route file)
+// 2. Move logic to function (for cleaner Route file)
+// 3. Move function to class (for better organization (tagging bangun-datar/perpustakaan) in Route file)
+// 4. Joi (Validate Input for naught user)
 
 // =================================================================================================
 //                                     ROUTING CONFIGURATION
@@ -77,7 +77,17 @@ route.post('/bangun-datar/lingkaran', (req, res) => {
 route.post('/bangun-datar/segitiga', (req, res) => {
   let luas = 0
   let keliling = 0
-  // LOGIKA LUAS DAN KELILING SEGITIGA
+  // LOGIKA LUAS DAN KELILING SEGITIGA SAMA SISI
+  //1 ambil data dari client/user
+  const payload = req.body;
+  //2 definisikan variabel yang dibutuhkan
+  const alas = payload.alas
+  const tinggi = payload.tinggi
+
+  //3 hitung luas
+  luas = alas*tinggi/2;
+  //4 hitung keliling
+  keliling = 3*alas
   // TODO : Membuat logika untuk menghitung luas dan keliling segitiga
 
   // Kirim Luas dan Keliling ke User
