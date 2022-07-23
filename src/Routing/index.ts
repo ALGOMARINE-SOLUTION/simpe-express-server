@@ -35,7 +35,21 @@ route.post('/bangun-datar/persegi', (req, res) => {
   let luas = 0
   let keliling = 0
   // LOGIKA LUAS DAN KELILING PERSEGI
-  // TODO : Membuat logika untuk menghitung luas dan keliling persegi
+  // 1. Ambil data dari user/client
+  const payload=req.body;
+  //console.log(payload);
+  //console.log(payload.sisi);
+  //console.log(payload.panjang);
+
+  // 2. Definisikan variabel yang dibutuhkan
+  const sisi = payload.sisi
+
+  // 3. Hitung luas
+  luas = sisi**2;
+
+  // 4. Hitung keliling
+  keliling = 4*sisi;
+
 
   // Kirim Luas dan Keliling ke User
   return res.json({ data: { luas: luas, keliling: keliling } })
@@ -47,6 +61,19 @@ route.post('/bangun-datar/lingkaran', (req, res) => {
   // LOGIKA LUAS DAN KELILING LINGKARAN
   // TODO : Membuat logika untuk menghitung luas dan keliling lingkaran
 
+  // 1. Ambil data dari user
+  const bundar = req.body;
+  //console.log(bundar);
+
+  // 2. Definisikan variabel yang dibutuhkan
+  const radius = bundar.radius
+
+  // 3. Hitung luas
+  luas = 3.14*(radius**2)
+
+  // 4. Hitung keliling
+  keliling = 2*3.14*radius 
+
   // Kirim Luas dan Keliling ke User
   return res.json({ data: { luas: luas, keliling: keliling } })
 })
@@ -56,6 +83,12 @@ route.post('/bangun-datar/segitiga', (req, res) => {
   let keliling = 0
   // LOGIKA LUAS DAN KELILING SEGITIGA
   // TODO : Membuat logika untuk menghitung luas dan keliling segitiga
+
+  const stig = req.body;
+  const alas = stig.alas;
+  const tinggi = stig.tinggi;
+  luas = 0.5*alas*tinggi
+  keliling = 3*alas
 
   // Kirim Luas dan Keliling ke User
   return res.json({ data: { luas: luas, keliling: keliling } })
