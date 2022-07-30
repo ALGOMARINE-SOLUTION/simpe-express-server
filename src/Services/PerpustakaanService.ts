@@ -1,6 +1,4 @@
-// book collection
 import { koleksiBuku } from "../Data";
-
 class PerpustakaanService {
   // ELSA
   ubahBukuService (buku: {nama: string, pengarang: string, urutan: number}) {
@@ -18,9 +16,13 @@ class PerpustakaanService {
 
   // MOSES
   // TODO : CODE
+ tambahBuku(nambah: any){
+    koleksiBuku.push(nambah)
+    return (koleksiBuku)
+
 
   // SALMAA
   // TODO : CODE
 }
-
+}
 export const perpustakaanService = new PerpustakaanService()
