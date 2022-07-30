@@ -3,7 +3,7 @@ import { Router } from "express";
 // controllers
 import { hitungLuasPersegi } from "../Controllers/PersegiController";
 import { hitungLuasLingkaran } from "../Controllers/LingkaranController";
-import { perhitunganPersegiPanjang } from "../Controllers/persegiPanjangController";
+import { perhitunganPersegiPanjang } from "../Controllers/PersegiPanjangController";
 import { hitungLuasSegitiga } from "../Controllers/SegitigaController";
 
 // book collection
