@@ -2,10 +2,6 @@ import { Router } from "express";
 
 // controllers
 import { bangunDatarController } from "../Controllers/BangunDatarController";
-import { hitungLuasLingkaran } from "../Controllers/LingkaranController";
-import { perpustakaanController } from "../Controllers/PerpustakaanController";
-import { perhitunganPersegiPanjang } from "../Controllers/persegiPanjangController";
-import { hitungLuasSegitiga } from "../Controllers/SegitigaController";
 
 // book collection
 import { koleksiBuku } from "../Data";
@@ -26,9 +22,9 @@ const route = Router();
 // ROUTE SEPUTAR PERHITUNGAN BANGUN DATAR
 route.get('/bangun-datar', bangunDatarController.index)
 route.post('/bangun-datar/persegi', bangunDatarController.hitungLuasPersegi)
-route.post('/bangun-datar/lingkaran', hitungLuasLingkaran) 
-route.post('/bangun-datar/segitiga', hitungLuasSegitiga)
-route.post('/bangun-datar/persegi-panjang', perhitunganPersegiPanjang)
+route.post('/bangun-datar/lingkaran', bangunDatarController.hitungLuasLingkaran)
+route.post('/bangun-datar/segitiga', bangunDatarController.hitungLuasSegitiga)
+route.post('/bangun-datar/persegi-panjang', bangunDatarController.perhitunganPersegiPanjang)
 
 // ROUTE PERPUSTAKAAN
 route.get('/perpustakaan', perpustakaanController.index)
