@@ -38,9 +38,7 @@ route.get('/bangun-datar', (req, res) => {
 })
 
 route.post('/bangun-datar/persegi', hitungLuasPersegi)
-
 route.post('/bangun-datar/lingkaran', hitungLuasLingkaran) 
-
 route.post('/bangun-datar/segitiga', hitungLuasSegitiga)
 
 
