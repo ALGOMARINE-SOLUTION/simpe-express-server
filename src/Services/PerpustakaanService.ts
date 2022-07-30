@@ -7,7 +7,7 @@ class PerpustakaanService {
   // TODO : CODE
  tambahBuku(nambah: any){
     koleksiBuku.push(nambah)
-    return {data : koleksiBuku}
+    return (koleksiBuku)
 
 
   // SALMAA
