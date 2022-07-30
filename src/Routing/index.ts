@@ -1,5 +1,8 @@
 import { Router } from "express";
 
+// controllers
+import { hitungLuasPersegi } from "../Controllers/PersegiController";
+
 // book collection
 import { koleksiBuku } from "../Data";
 
@@ -31,27 +34,9 @@ route.get('/bangun-datar', (req, res) => {
   )
 })
 
-route.post('/bangun-datar/persegi', (req, res) => {
-  let luas = 0
-  let keliling = 0
-  // LOGIKA LUAS DAN KELILING PERSEGI
-  // 1. ambil data dari client/user
-  const payload = req.body;
+route.post('/bangun-datar/persegi', hitungLuasPersegi)
 
-  // 2. definisikan variabel yang dibutuhkan
-  const sisi =payload.sisi
-
-  // 3. hitung luas
-  luas = sisi * sisi;
-
-  // 4. hitung keliling
-  keliling = 4 * sisi
-
-  // Kirim Luas dan Keliling ke User
-  return res.json({ data: { luas: luas, keliling: keliling } })
-})
-
-route.post('/bangun-datar/lingkaran', (req, res) => {
+route.post('/bangun-datar/lingkaran', function (req, res) {
   let luas = 0
   let keliling = 0
   // LOGIKA LUAS DAN KELILING LINGKARAN
