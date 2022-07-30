@@ -4,8 +4,6 @@ const express_1 = require("express");
 // controllers
 const BangunDatarController_1 = require("../Controllers/BangunDatarController");
 const PerpustakaanController_1 = require("../Controllers/PerpustakaanController");
-// book collection
-const Data_1 = require("../Data");
 // Materials :
 // 1. Exercise
 // 2. Move logic to function (for cleaner Route file)
@@ -28,23 +26,9 @@ route.get('/perpustakaan/daftar-buku', PerpustakaanController_1.perpustakaanCont
 route.post('/perpustakaan/hapus-buku', PerpustakaanController_1.perpustakaanController.hapusBuku);
 // API tambah buku
 // TODO : Bikin API Tambah Buku
-route.post('/perpustakaan/tambah-buku', (req, res) => {
-    const nambah = req.body;
-    Data_1.koleksiBuku.push(nambah);
-    return res.json({ data: Data_1.koleksiBuku });
-});
+route.post('/perpustakaan/tambah-buku', PerpustakaanController_1.perpustakaanController.tambahBuku);
 // API ubah buku
-route.post('/perpustakaan/ubah-buku', (req, res) => {
-    // 1. Ambil data dari user
-    const buku = req.body;
-    // 2. Definisi variabel
-    const nama = buku.nama;
-    const pengarang = buku.pengarang;
-    const urutan = buku.urutan;
-    // 3. Ubah buku
-    Data_1.koleksiBuku[urutan] = { nama, pengarang };
-    return res.json({ data: Data_1.koleksiBuku });
-});
+route.post('/perpustakaan/ubah-buku', PerpustakaanController_1.perpustakaanController.ubahBukuController);
 // =================================================================================================
 //                                            OTHERS
 // =================================================================================================

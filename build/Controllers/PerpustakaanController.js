@@ -26,9 +26,41 @@ class PerpustakaanController {
         return res.json({ data: Data_1.koleksiBuku });
     }
     // ELSA
-    // TODO : CODE
+    ubahBukuController(req, res) {
+        // ======= VALIDASI ==========
+        const skemaValidasi = joi_1.default.object({
+            urutan: joi_1.default.number().required(),
+            nama: joi_1.default.string().required(),
+            pengarang: joi_1.default.string().required()
+        });
+        const hasilValidasi = skemaValidasi.validate(req.body);
+        if (!hasilValidasi.error) {
+            const data = PerpustakaanService_1.perpustakaanService.ubahBukuService(req.body);
+            return res.json({ data: data });
+        }
+        else {
+            console.log(hasilValidasi.error);
+            res.status(400).json({ error: 'salah bro' });
+        }
+    }
     // MOSES
     // TODO : CODE
+    tambahBuku(req, res) {
+        const skemaValidasi = joi_1.default.object({
+            nama: joi_1.default.string().required(),
+            pengarang: joi_1.default.string().required()
+        });
+        const hasilValidasi = skemaValidasi.validate(req.body);
+        if (!hasilValidasi.error) {
+            const data = PerpustakaanService_1.perpustakaanService.tambahBuku(req.body);
+            return res.json({ data: data });
+        }
+        else {
+            console.log(hasilValidasi.error);
+            res.status(400).json({ error: 'salah masukin kamu' });
+        }
+    }
+    ;
     // SALMAA
     hapusBuku(req, res) {
         const skemaValidasi = joi_1.default.object({
