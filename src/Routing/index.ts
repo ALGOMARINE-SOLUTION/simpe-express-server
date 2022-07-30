@@ -2,6 +2,7 @@ import { Router } from "express";
 
 // controllers
 import { bangunDatarController } from "../Controllers/BangunDatarController";
+import { perpustakaanController } from "../Controllers/PerpustakaanController";
 
 // book collection
 import { koleksiBuku } from "../Data";
