@@ -10,7 +10,7 @@ export function hitungLuasLingkaran (req: any, res: any) {
     const hasilValidasi = skemaValidasi.validate(req.body);
     if(!hasilValidasi.error) {
     const data = hitungLuasLingkaranService(req.body)
-    console.log(data);
+    
     // Kirim Luas dan Keliling ke User
     return res.json({ data: data })
     } else {
