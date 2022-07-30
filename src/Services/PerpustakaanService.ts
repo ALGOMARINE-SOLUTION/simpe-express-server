@@ -1,7 +1,18 @@
 import { koleksiBuku } from "../Data";
 class PerpustakaanService {
   // ELSA
-  // TODO : CODE
+  ubahBukuService (buku: {nama: string, pengarang: string, urutan: number}) {
+    // 1. Ambil data dari user
+  
+    // 2. Definisi variabel
+    const nama = buku.nama;
+    const pengarang = buku.pengarang;
+    const urutan = buku.urutan;
+
+    // 3. Ubah buku
+    koleksiBuku[urutan] = {nama, pengarang}
+    return (koleksiBuku)
+  }
 
   // MOSES
   // TODO : CODE

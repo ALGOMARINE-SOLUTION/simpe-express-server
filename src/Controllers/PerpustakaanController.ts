@@ -24,8 +24,25 @@ class PerpustakaanController {
     return res.json({ data: koleksiBuku })
   }
   // ELSA
-  // TODO : CODE
+  ubahBukuController (req: any, res: any) {
+    // ======= VALIDASI ==========
+  const skemaValidasi = Joi.object({
+    urutan: Joi.number().required(),
+    nama: Joi.string().required(),
+    pengarang: Joi.string().required()
+  })
 
+  const hasilValidasi = skemaValidasi.validate(req.body);
+  if(!hasilValidasi.error) {
+    const data = perpustakaanService.ubahBukuService(req.body)
+
+    return res.json({ data: data }) 
+  } else {
+    console.log(hasilValidasi.error)
+    res.status(400).json({ error: 'salah bro'})
+  }
+}
+  
   // MOSES
   // TODO : CODE
 tambahBuku(req: any, res: any){
