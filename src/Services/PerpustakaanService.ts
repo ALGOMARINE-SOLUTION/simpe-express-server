@@ -12,7 +12,7 @@ class PerpustakaanService {
   hapusBukuService (input: { urutan: number }) {
     const urutan = input.urutan;
     koleksiBuku.splice(urutan, 1);
-    return ({ data: koleksiBuku })
+    return (koleksiBuku)
   }
 }
 
