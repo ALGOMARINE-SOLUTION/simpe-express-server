@@ -28,6 +28,10 @@ class PerpustakaanController {
 
   // MOSES
   // TODO : CODE
+tambahBuku(req: any, res: any){
+const data = perpustakaanService.tambahBuku(req.body)
+    return res.json({data : koleksiBuku})
+}
 
   // SALMAA
   // TODO : CODE

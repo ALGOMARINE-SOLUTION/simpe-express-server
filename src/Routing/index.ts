@@ -33,11 +33,8 @@ route.get('/perpustakaan/daftar-buku', perpustakaanController.daftarBuku)
 
 // API tambah buku
 // TODO : Bikin API Tambah Buku
-route.post('/perpustakaan/tambah-buku', (req, res) => {
-    const nambah = req.body;
-    koleksiBuku.push(nambah)
-    return res.json({data : koleksiBuku})
-})
+route.post('/perpustakaan/tambah-buku', perpustakaanController.tambahBuku)
+  
 
 // API ubah buku
 route.post('/perpustakaan/ubah-buku', (req, res) => {
