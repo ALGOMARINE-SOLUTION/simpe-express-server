@@ -134,8 +134,6 @@ route.get('/perpustakaan/daftar-buku', (req, res) => {
 // TODO : Bikin API Tambah Buku
 route.post('/perpustakaan/tambah-buku', (req, res) => {
 const nambah = req.body;
-const nama = nambah.nama
-const pengarang = nambah.pengarang
 
 koleksiBuku.push(nambah)  
 
