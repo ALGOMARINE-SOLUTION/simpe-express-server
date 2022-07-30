@@ -1,4 +1,14 @@
+import Joi from "joi";
+
 export function hitungLuasPersegi(req: any, res: any) {
+  // ======== VALIDASI ========
+  const skemaValidasi = Joi.object({
+    sisi: Joi.number().required()
+  })
+  
+  const hasilValidasi = skemaValidasi.validate(req.body);
+  if(!hasilValidasi.error) {
+    // ========= LOGIKA =========
   let luas = 0
   let keliling = 0
   // LOGIKA LUAS DAN KELILING PERSEGI
@@ -16,4 +26,8 @@ export function hitungLuasPersegi(req: any, res: any) {
 
   // Kirim Luas dan Keliling ke User
   return res.json({ data: { luas: luas, keliling: keliling } })
+  } else {
+    console.log(hasilValidasi.error)
+    res.status(400).json({ error: 'datanya salah' })
+  }
 }
