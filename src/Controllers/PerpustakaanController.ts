@@ -29,9 +29,19 @@ class PerpustakaanController {
   // MOSES
   // TODO : CODE
 tambahBuku(req: any, res: any){
-const data = perpustakaanService.tambahBuku(req.body)
-    return res.json({data : koleksiBuku})
+const skemaValidasi = Joi.object({
+  nama: Joi.string().required(),
+  pengarang : Joi.string().required()
+})
+const hasilValidasi = skemaValidasi.validate(req.body);
+if(!hasilValidasi.error) {
+  const data = perpustakaanService.tambahBuku(req.body)
+  return res.json({ data: data })
+} else {
+  console.log(hasilValidasi.error)
+  res.status(400).json({ error: 'salah masukin kamu' })
 }
+};
 
   // SALMAA
   // TODO : CODE
