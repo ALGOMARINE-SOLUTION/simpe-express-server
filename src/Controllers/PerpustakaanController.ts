@@ -61,7 +61,20 @@ if(!hasilValidasi.error) {
 };
 
   // SALMAA
-  // TODO : CODE
-}
+  hapusBuku (req: any, res: any) {
+    const skemaValidasi = Joi.object({
+      urutan: Joi.number().required()
+    })
+    
+    const hasilValidasi = skemaValidasi.validate(req.body);
+    if(!hasilValidasi.error) {
+      const data = perpustakaanService.hapusBukuService(req.body)
+      return res.json({ data: data })
+    } else {
+      console.log(hasilValidasi.error)
+      res.status(400).json({ error: 'datanya salah' })
+    }
+  };
+}  
 
 export const perpustakaanController = new PerpustakaanController()

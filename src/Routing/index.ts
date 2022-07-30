@@ -30,6 +30,7 @@ route.post('/bangun-datar/persegi-panjang', bangunDatarController.perhitunganPer
 // ROUTE PERPUSTAKAAN
 route.get('/perpustakaan', perpustakaanController.index)
 route.get('/perpustakaan/daftar-buku', perpustakaanController.daftarBuku)
+route.post('/perpustakaan/hapus-buku', perpustakaanController.hapusBuku)
 
 // API tambah buku
 // TODO : Bikin API Tambah Buku
@@ -38,16 +39,6 @@ route.post('/perpustakaan/tambah-buku', perpustakaanController.tambahBuku)
 
 // API ubah buku
 route.post('/perpustakaan/ubah-buku', perpustakaanController.ubahBukuController)
-
-
-// API hapus buku
-// TODO : Bikin API Hapus Buku
-route.post('/perpustakaan/hapus-buku', (req, res) => {
-    const input = req.body;
-    const urutan = input.urutan;
-    koleksiBuku.splice(urutan, 1);
-    return res.json({ data: koleksiBuku })
-})
 
 // =================================================================================================
 //                                            OTHERS

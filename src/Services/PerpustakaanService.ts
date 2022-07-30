@@ -1,4 +1,5 @@
 import { koleksiBuku } from "../Data";
+
 class PerpustakaanService {
   // ELSA
   ubahBukuService (buku: {nama: string, pengarang: string, urutan: number}) {
@@ -16,13 +17,17 @@ class PerpustakaanService {
 
   // MOSES
   // TODO : CODE
- tambahBuku(nambah: any){
+  tambahBuku(nambah: any){
     koleksiBuku.push(nambah)
     return (koleksiBuku)
-
+  }
 
   // SALMAA
-  // TODO : CODE
+  hapusBukuService (input: { urutan: number }) {
+    const urutan = input.urutan;
+    koleksiBuku.splice(urutan, 1);
+    return (koleksiBuku)
+  }
 }
-}
+
 export const perpustakaanService = new PerpustakaanService()
