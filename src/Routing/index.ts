@@ -40,19 +40,7 @@ route.post('/perpustakaan/tambah-buku', (req, res) => {
 })
 
 // API ubah buku
-route.post('/perpustakaan/ubah-buku', (req, res) => {
-  // 1. Ambil data dari user
-  const buku = req.body;
-
-  // 2. Definisi variabel
-  const nama = buku.nama;
-  const pengarang = buku.pengarang;
-  const urutan = buku.urutan;
-
-  // 3. Ubah buku
-  koleksiBuku[urutan] = {nama, pengarang}
-  return res.json({ data: koleksiBuku })
-})
+route.post('/perpustakaan/ubah-buku', perpustakaanController.ubahBukuController)
 
 
 // API hapus buku
