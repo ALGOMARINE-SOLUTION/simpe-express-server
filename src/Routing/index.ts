@@ -2,7 +2,6 @@ import { Router } from "express";
 
 // controllers
 import { bangunDatarController } from "../Controllers/BangunDatarController";
-import { perhitunganPersegiPanjang } from "../Controllers/persegiPanjangController";
 import { hitungLuasSegitiga } from "../Controllers/SegitigaController";
 
 // book collection
@@ -39,7 +38,7 @@ route.get('/bangun-datar', (req, res) => {
 route.post('/bangun-datar/persegi', bangunDatarController.hitungLuasPersegi)
 route.post('/bangun-datar/lingkaran', bangunDatarController.hitungLuasLingkaran) 
 route.post('/bangun-datar/segitiga', hitungLuasSegitiga)
-route.post('/bangun-datar/persegi-panjang', perhitunganPersegiPanjang)
+route.post('/bangun-datar/persegi-panjang', bangunDatarController.perhitunganPersegiPanjang)
 
 // ROUTE PERPUSTAKAAN
 route.get('/perpustakaan', (req, res) => {
