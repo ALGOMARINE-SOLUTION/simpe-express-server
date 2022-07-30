@@ -35,7 +35,7 @@ class BangunDatarService {
          
     // 4. Hitung keliling
     keliling = 2*3.14*radius 
-    
+  } 
   perhitunganPersegiPanjangService(input: { panjang: number, lebar: number }) {
     // ========= LOGIKA =========
     let luas = 0
