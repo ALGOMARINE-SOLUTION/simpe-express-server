@@ -2,6 +2,7 @@ import { Router } from "express";
 
 // controllers
 import { hitungLuasPersegi } from "../Controllers/PersegiController";
+import { perhitunganPersegiPanjang } from "../Controllers/persegiPanjangController";
 
 // book collection
 import { koleksiBuku } from "../Data";
@@ -79,20 +80,7 @@ route.post('/bangun-datar/segitiga', (req, res) => {
   return res.json({ data: { luas: luas, keliling: keliling } })
 })
 
-route.post('/bangun-datar/persegi-panjang', (req, res) => {
-  let luas = 0
-  let keliling = 0
-  // LOGIKA LUAS DAN KELILING PERSEGI PANJANG
-  // TODO : Membuat logika untuk menghitung luas dan keliling persegi-panjang
-    const input = req.body;
-    const panjang = input.panjang;
-    const lebar = input.lebar;
-
-    luas = panjang * lebar
-    keliling = ( 2 * panjang ) + ( 2 * lebar )
-  // Kirim Luas dan Keliling ke User
-  return res.json({ data: { luas: luas, keliling: keliling } })
-})
+route.post('/bangun-datar/persegi-panjang', perhitunganPersegiPanjang)
 
 // ROUTE PERPUSTAKAAN
 route.get('/perpustakaan', (req, res) => {
