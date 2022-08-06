@@ -1,11 +1,17 @@
 import { koleksiBukuService } from "../Services/KoleksiBukuService"
+// book collection
+import { koleksiFilm } from "../Data";
 
 class KoleksiBukuController {
   // Elsa
-
+  trendFilmController (req: any, res: any) {
+    const data = koleksiBukuService.trendFilmService()
+    return res.json({ data: data })
+  }
+  
   // Moses
   koleksiBukuFalse(req: any, res: any){
-    const data = koleksiBukuService.koleksiFilmFalse(req.body)
+    const data = koleksiBukuService.koleksiFilmFalse()
       return res.json({ data: data })
 }}
 

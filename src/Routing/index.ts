@@ -2,11 +2,13 @@ import { Router } from "express";
 
 // controllers
 import { bangunDatarController } from "../Controllers/BangunDatarController";
-import { perpustakaanController } from "../Controllers/PerpustakaanController";
 import { koleksiBukuController } from "../Controllers/KoleksiBukuController";
+import { perpustakaanController } from "../Controllers/PerpustakaanController";
+
 
 // book collection
 import { koleksiBuku } from "../Data";
+
 
 // Materials :
 // 1. Exercise
@@ -37,6 +39,8 @@ route.post('/perpustakaan/ubah-buku', perpustakaanController.ubahBukuController)
 
 // ROUTE KOLEKSI BUKU
 // TODO: ELSA
+route.get('/cinema/trending-now-list', koleksiBukuController.trendFilmController)
+
 // TODO: MOSES
 route.get('/cinema/not-trending-list', koleksiBukuController.koleksiBukuFalse)
 
