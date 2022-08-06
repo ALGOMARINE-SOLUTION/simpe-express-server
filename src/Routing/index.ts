@@ -3,6 +3,7 @@ import { Router } from "express";
 // controllers
 import { bangunDatarController } from "../Controllers/BangunDatarController";
 import { perpustakaanController } from "../Controllers/PerpustakaanController";
+import { koleksiBukuController } from "../Controllers/KoleksiBukuController";
 
 // book collection
 import { koleksiBuku } from "../Data";
@@ -37,6 +38,7 @@ route.post('/perpustakaan/ubah-buku', perpustakaanController.ubahBukuController)
 // ROUTE KOLEKSI BUKU
 // TODO: ELSA
 // TODO: MOSES
+route.get('/cinema/not-trending-list', koleksiBukuController.koleksiBukuFalse)
 
 // =================================================================================================
 //                                            OTHERS
