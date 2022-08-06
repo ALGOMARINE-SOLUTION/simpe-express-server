@@ -31,14 +31,12 @@ route.post('/bangun-datar/persegi-panjang', bangunDatarController.perhitunganPer
 route.get('/perpustakaan', perpustakaanController.index)
 route.get('/perpustakaan/daftar-buku', perpustakaanController.daftarBuku)
 route.post('/perpustakaan/hapus-buku', perpustakaanController.hapusBuku)
-
-// API tambah buku
-// TODO : Bikin API Tambah Buku
 route.post('/perpustakaan/tambah-buku', perpustakaanController.tambahBuku)
-  
-
-// API ubah buku
 route.post('/perpustakaan/ubah-buku', perpustakaanController.ubahBukuController)
+
+// ROUTE KOLEKSI BUKU
+// TODO: ELSA
+// TODO: MOSES
 
 // =================================================================================================
 //                                            OTHERS
