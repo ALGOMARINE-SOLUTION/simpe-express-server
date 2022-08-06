@@ -5,11 +5,10 @@ import { bangunDatarController } from "../Controllers/BangunDatarController";
 import { koleksiBukuController } from "../Controllers/KoleksiBukuController";
 import { perpustakaanController } from "../Controllers/PerpustakaanController";
 
+
 // book collection
 import { koleksiBuku } from "../Data";
 
-// film collection
-import { koleksiFilm } from "../Data"
 
 // Materials :
 // 1. Exercise
@@ -43,6 +42,7 @@ route.post('/perpustakaan/ubah-buku', perpustakaanController.ubahBukuController)
 route.get('/cinema/trending-now-list', koleksiBukuController.trendFilmController)
 
 // TODO: MOSES
+route.get('/cinema/not-trending-list', koleksiBukuController.koleksiBukuFalse)
 
 // =================================================================================================
 //                                            OTHERS

@@ -1,6 +1,4 @@
-import Joi from "joi";
-import { koleksiBukuService } from "../Services/KoleksiBukuService";
-
+import { koleksiBukuService } from "../Services/KoleksiBukuService"
 // book collection
 import { koleksiFilm } from "../Data";
 
@@ -11,7 +9,10 @@ class KoleksiBukuController {
     return res.json({ data: data })
   }
   
-
   // Moses
-}
+  koleksiBukuFalse(req: any, res: any){
+    const data = koleksiBukuService.koleksiFilmFalse()
+      return res.json({ data: data })
+}}
+
 export const koleksiBukuController = new KoleksiBukuController()

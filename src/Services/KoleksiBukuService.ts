@@ -1,4 +1,4 @@
-import { koleksiFilm } from "../Data";
+import { koleksiFilm } from "../Data"
 
 class KoleksiBukuService {
   // Elsa
@@ -8,6 +8,11 @@ class KoleksiBukuService {
   }
 
   // Moses
+  koleksiFilmFalse () {
+    const filterdata = koleksiFilm.filter (function (data) {return data.trending === false })
+    return (filterdata)
+  }
 }
+
 
 export const koleksiBukuService = new KoleksiBukuService()
