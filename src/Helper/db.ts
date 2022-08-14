@@ -1,4 +1,4 @@
-import mysql from "mysql";
+import mysql, { MysqlError, FieldInfo } from "mysql";
 
 export const connection = mysql.createConnection({
   host: 'localhost',
@@ -8,8 +8,11 @@ export const connection = mysql.createConnection({
   password: process.env.DB_PASS
 });
 
-export async function query(sql: string, params: string[]) {
-  const results = connection.query(sql, params);
-
-  return results;
+export function query(sql: string, params: string[]) {
+  return new Promise((resolve, reject) => {
+    connection.query(sql, params, (error:MysqlError | null, result?: any, fields?: FieldInfo[] ) => {
+      if(error) reject(error)
+      resolve(result)
+    });
+  })
 }
