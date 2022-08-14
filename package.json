@@ -4,7 +4,7 @@
   "description": "Project with typescript format",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon src/server.ts",
+    "start": "dotenv-load nodemon src/server.ts",
     "build": "tsc --build"
   },
   "author": "ALGOMARINE SOLUTION",
@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "cors": "^2.8.5",
-    "dotenv": "^16.0.1",
+    "dotenv-load": "^2.0.1",
     "express": "^4.18.1",
     "joi": "^17.6.0",
     "mysql": "^2.18.1"
