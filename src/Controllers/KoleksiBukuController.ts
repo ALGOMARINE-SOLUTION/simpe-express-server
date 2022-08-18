@@ -12,24 +12,23 @@ class KoleksiBukuController {
 
   async tambahFilmController (req: any, res: any) {
     // ======= VALIDASI ==========
-  const skemaValidasi = Joi.object({
-    id: Joi.number().required(),
-    nama: Joi.string().required(),
-    sutradara: Joi.string().required(),
-    studio: Joi.string().required(),
-    trending: Joi.boolean().required()
-  })
+    const skemaValidasi = Joi.object({
+      id: Joi.number().required(),
+      nama: Joi.string().required(),
+      sutradara: Joi.string().required(),
+      studio: Joi.string().required(),
+      trending: Joi.boolean().required()
+    })
 
-  const hasilValidasi = skemaValidasi.validate(req.body);
-  if(!hasilValidasi.error) {
-    const data = await koleksiBukuService.tambahFilmService(req.body)
-
-    return res.json({ data: data }) 
-  } else {
-    console.log(hasilValidasi.error)
-    res.status(400).json({ error: 'salah bro'})
+    const hasilValidasi = skemaValidasi.validate(req.body);
+    if(!hasilValidasi.error) {
+      const data = await koleksiBukuService.tambahFilmService(req.body)
+      return res.json({ data: data }) 
+    } else {
+      console.log(hasilValidasi.error)
+      res.status(400).json({ error: 'salah bro'})
+    }
   }
-}
   
   // Moses
   koleksiBukuFalse(req: any, res: any){

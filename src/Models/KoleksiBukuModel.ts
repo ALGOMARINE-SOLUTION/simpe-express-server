@@ -1,3 +1,4 @@
+import { number, string } from "joi";
 import { query } from "../Helper/db";
 
 class KoleksiFilmModel {
@@ -9,23 +10,23 @@ class KoleksiFilmModel {
         )
     }
 
-    async tambahFilm(id: number, nama: string, sutradara: string, studio: string, trending: boolean) {
+    async tambahFilm(id: number, nama: string, sutradara: string, studio: string, trending: boolean): Promise<any> {
         return await query (
             `
                 INSERT INTO
                     koleksi_film (id, nama, sutradara, studio, trending)
                 VALUES
-                    (?, ?)
+                    (?, ?, ?, ?, ?)
             `,
             [
-                "id",
+                'id',
                 nama,
                 sutradara,
                 studio,
-                "trending"
+                'trending'
             ]
         )
-    }
+    };
 }
 
 export const koleksifilmModel = new KoleksiFilmModel()

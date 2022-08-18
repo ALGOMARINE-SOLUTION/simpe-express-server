@@ -8,12 +8,9 @@ class KoleksiBukuService {
     return (filterData)
   }
 
-  async tambahFilmService(nambah: any){
-    koleksiFilm.push(nambah)
-
-    await koleksifilmModel.tambahFilm(nambah.id, nambah.nama, nambah.sutradara, nambah.studio, nambah.trending)
-
-    return (koleksiFilm)
+  async tambahFilmService(nambah: {id: number, nama: string, sutradara: string, studio: string, trending: boolean} ){
+    const addFilm = await koleksifilmModel.tambahFilm(nambah.id, nambah.nama, nambah.sutradara, nambah.studio, nambah.trending)
+    return (addFilm)
   }
 
   // Moses
