@@ -8,7 +8,7 @@ export const connection = mysql.createConnection({
   password: process.env.DB_PASS
 });
 
-export function query(sql: string, params: string[]) {
+export function query(sql: string, params: any[]) {
   return new Promise((resolve, reject) => {
     connection.query(sql, params, (error:MysqlError | null, result?: any, fields?: FieldInfo[] ) => {
       if(error) reject(error)

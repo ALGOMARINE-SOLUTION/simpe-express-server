@@ -3,6 +3,7 @@ import { Router } from "express";
 // controllers
 import { bangunDatarController } from "../Controllers/BangunDatarController";
 import { koleksiBukuController } from "../Controllers/KoleksiBukuController";
+import { koleksiFilmController } from "../Controllers/KoleksiFilmController";
 import { perpustakaanController } from "../Controllers/PerpustakaanController";
 
 
@@ -43,6 +44,7 @@ route.get('/cinema/trending-now-list', koleksiBukuController.trendFilmController
 
 // TODO: MOSES
 route.get('/cinema/not-trending-list', koleksiBukuController.koleksiBukuFalse)
+route.post('/cinema/change-movie', koleksiFilmController.changefilm)
 
 // =================================================================================================
 //                                            OTHERS
