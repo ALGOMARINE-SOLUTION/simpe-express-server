@@ -1,15 +1,16 @@
 import { koleksiFilm } from "../Data"
+import { koleksiBukuModel } from "../Models/KoleksiBukuModel"
 
 class KoleksiBukuService {
   // Elsa
   trendFilmService () {
-    const filterData = koleksiFilm.filter(function (data) {return data.trending === true})
+    const filterData = koleksiFilm.filter (function (data) {return data.trending === true })
     return (filterData)
   }
 
   // Moses
-  koleksiFilmFalse () {
-    const filterdata = koleksiFilm.filter (function (data) {return data.trending === false })
+   async koleksiFilmFalse () {
+    const filterdata = await koleksiBukuModel.getKoleksiBuku()
     return (filterdata)
   }
 }

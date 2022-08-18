@@ -45,14 +45,14 @@ class PerpustakaanController {
   
   // MOSES
   // TODO : CODE
-tambahBuku(req: any, res: any){
+async tambahBuku(req: any, res: any){  
 const skemaValidasi = Joi.object({
   nama: Joi.string().required(),
   pengarang : Joi.string().required()
 })
 const hasilValidasi = skemaValidasi.validate(req.body);
 if(!hasilValidasi.error) {
-  const data = perpustakaanService.tambahBuku(req.body)
+  const data = await perpustakaanService.tambahBuku(req.body)
   return res.json({ data: data })
 } else {
   console.log(hasilValidasi.error)

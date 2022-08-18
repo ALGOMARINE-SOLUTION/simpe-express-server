@@ -10,8 +10,8 @@ class KoleksiBukuController {
   }
   
   // Moses
-  koleksiBukuFalse(req: any, res: any){
-    const data = koleksiBukuService.koleksiFilmFalse()
+  async koleksiBukuFalse(req: any, res: any){
+    const data = await koleksiBukuService.koleksiFilmFalse()
       return res.json({ data: data })
 }}
 
