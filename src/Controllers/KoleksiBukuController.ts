@@ -2,7 +2,7 @@ import { koleksiBukuService } from "../Services/KoleksiBukuService"
 // book collection
 import { koleksiFilm } from "../Data";
 import Joi from "joi";
-import { handling } from "../Handling/handling";
+import { handling } from "../Handling/Handling";
 
 class KoleksiBukuController {
   // Elsa
