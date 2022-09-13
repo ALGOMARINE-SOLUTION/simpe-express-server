@@ -2,12 +2,17 @@ import { koleksiBukuService } from "../Services/KoleksiBukuService"
 // book collection
 import { koleksiFilm } from "../Data";
 import Joi from "joi";
+import { handling } from "../Handling/handling";
 
 class KoleksiBukuController {
   // Elsa
-  async trendFilmController (req: any, res: any) {
-    const data = await koleksiBukuService.trendFilmService()
-    return res.json({ data: data })
+  async trendFilmController (req: any, res: any) : Promise<unknown> {
+    try{
+      const data : any = await koleksiBukuService.trendFilmService()
+      return handling.sendSuccessResponse(res, data);
+    } catch (err: any) {
+      return handling.sendErrorResponse(res, '[KoleksiBukuController][trendFilmController]', err.message);
+    }
   }
 
   async tambahFilmController (req: any, res: any) {

@@ -5,7 +5,7 @@ class KoleksiBukuService {
   // Elsa
   async trendFilmService () {
     const filterData = await koleksifilmModel.trendFilm()
-    return (filterData)
+    return {data : filterData}
   }
 
   async tambahFilmService(nambah: {id: number, nama: string, sutradara: string, studio: string, trending: boolean} ){
