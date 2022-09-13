@@ -1,4 +1,5 @@
 import { koleksiBuku } from "../Data";
+import { perpustakaanModel } from "../Models/PerpustakaanModel"
 
 class PerpustakaanService {
   // ELSA
@@ -17,8 +18,11 @@ class PerpustakaanService {
 
   // MOSES
   // TODO : CODE
-  tambahBuku(nambah: any){
+  async tambahBuku(nambah: any){
     koleksiBuku.push(nambah)
+
+    await perpustakaanModel.insertBuku(nambah.nama, nambah.pengarang)
+
     return (koleksiBuku)
   }
 

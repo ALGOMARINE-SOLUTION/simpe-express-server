@@ -27,53 +27,68 @@ class PerpustakaanController {
     }
     // ELSA
     ubahBukuController(req, res) {
-        // ======= VALIDASI ==========
-        const skemaValidasi = joi_1.default.object({
-            urutan: joi_1.default.number().required(),
-            nama: joi_1.default.string().required(),
-            pengarang: joi_1.default.string().required()
-        });
-        const hasilValidasi = skemaValidasi.validate(req.body);
-        if (!hasilValidasi.error) {
-            const data = PerpustakaanService_1.perpustakaanService.ubahBukuService(req.body);
-            return res.json({ data: data });
-        }
-        else {
-            console.log(hasilValidasi.error);
-            res.status(400).json({ error: 'salah bro' });
+        try {
+            // ======= VALIDASI ==========
+            const skemaValidasi = joi_1.default.object({
+                urutan: joi_1.default.number().required(),
+                nama: joi_1.default.string().required(),
+                pengarang: joi_1.default.string().required()
+            });
+            const hasilValidasi = skemaValidasi.validate(req.body);
+            if (!hasilValidasi.error) {
+                const data = PerpustakaanService_1.perpustakaanService.ubahBukuService(req.body);
+                return res.json({ data: data });
+            }
+            else {
+                console.log(hasilValidasi.error);
+                res.status(400).json({ error: 'salah bro' });
+            }
+        } catch (error) {
+            console.log(error)
+            res.sendStatus(500)
         }
     }
     // MOSES
     // TODO : CODE
     tambahBuku(req, res) {
-        const skemaValidasi = joi_1.default.object({
-            nama: joi_1.default.string().required(),
-            pengarang: joi_1.default.string().required()
-        });
-        const hasilValidasi = skemaValidasi.validate(req.body);
-        if (!hasilValidasi.error) {
-            const data = PerpustakaanService_1.perpustakaanService.tambahBuku(req.body);
-            return res.json({ data: data });
-        }
-        else {
-            console.log(hasilValidasi.error);
-            res.status(400).json({ error: 'salah masukin kamu' });
+        try {
+            const skemaValidasi = joi_1.default.object({
+                nama: joi_1.default.string().required(),
+                pengarang: joi_1.default.string().required()
+            });
+            const hasilValidasi = skemaValidasi.validate(req.body);
+            if (!hasilValidasi.error) {
+                const data = PerpustakaanService_1.perpustakaanService.tambahBuku(req.body);
+                return res.json({ data: data });
+            }
+            else {
+                console.log(hasilValidasi.error);
+                res.status(400).json({ error: 'salah masukin kamu' });
+            }
+        } catch(error) {
+            console.log(error)
+            res.sendStatus(500)
         }
     }
     ;
     // SALMAA
     hapusBuku(req, res) {
-        const skemaValidasi = joi_1.default.object({
-            urutan: joi_1.default.number().required()
-        });
-        const hasilValidasi = skemaValidasi.validate(req.body);
-        if (!hasilValidasi.error) {
-            const data = PerpustakaanService_1.perpustakaanService.hapusBukuService(req.body);
-            return res.json({ data: data });
-        }
-        else {
-            console.log(hasilValidasi.error);
-            res.status(400).json({ error: 'datanya salah' });
+        try {
+            const skemaValidasi = joi_1.default.object({
+                urutan: joi_1.default.number().required()
+            });
+            const hasilValidasi = skemaValidasi.validate(req.body);
+            if (!hasilValidasi.error) {
+                const data = PerpustakaanService_1.perpustakaanService.hapusBukuService(req.body);
+                return res.json({ data: data });
+            }
+            else {
+                console.log(hasilValidasi.error);
+                res.status(400).json({ error: 'datanya salah' });
+            }
+        } catch(error) {
+            console.log(error)
+            res.sendStatus(500)
         }
     }
     ;
